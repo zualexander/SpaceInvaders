@@ -9,8 +9,8 @@ var sy = y + -10;
 ctx.fillRect(x, y, 30, 30)
 
 var shoot = function() {
-	if (sy >= 472) {
-		var sy = y + -10;
+	if (sy >= 500) {
+		sy = y + -10;
 	} else {
 		setInterval(function() {
 			ctx.clearRect(x, sy, 10, 10)
