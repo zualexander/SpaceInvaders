@@ -21,29 +21,15 @@ const MONSTER_HEIGHT =30;
 const MONSTER_WIDTH = 30;
 var mx = 50;
 var my = 50;
+const COLUMNS = 6;
+const ROWS = 3;
 
-
-// Draw monster squares
-// TODO: Minify code
-ctx.fillRect(mx, my, 30, 30);
-ctx.fillRect(mx + 60, my, 30, 30);
-ctx.fillRect(mx + 120, my, 30, 30);
-ctx.fillRect(mx + 180, my, 30, 30);
-ctx.fillRect(mx + 240, my, 30, 30);
-ctx.fillRect(mx + 300, my, 30, 30);
-ctx.fillRect(mx + 360, my, 30, 30);
-
-// Draw second line of monster squares
-ctx.fillRect(mx, my + 50, 30, 30);
-ctx.fillRect(mx + 60, my + 50, 30, 30);
-ctx.fillRect(mx + 120, my + 50, 30, 30);
-ctx.fillRect(mx + 180, my + 50, 30, 30);
-ctx.fillRect(mx + 240, my + 50, 30, 30);
-ctx.fillRect(mx + 300, my + 50, 30, 30);
-ctx.fillRect(mx + 360, my + 50, 30, 30);
-
-
-
+//Drawing Monster Squares
+for(var h=0; h < ROWS; h++){
+	for(var i = 0; i <= COLUMNS;i++  ){
+		ctx.fillRect(mx + i*60, my + 50*h, MONSTER_WIDTH, MONSTER_HEIGHT);
+	}
+}
 
 
 // Player square
