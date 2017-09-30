@@ -3,8 +3,8 @@ var ctx = canvas.getContext("2d");
 
 var x = 220;
 var y = 450;
-var sx = x + 0;
-var sy = y + -10;
+var sx = x;
+var sy = y - 10;
 var mx = 50;
 var my = 50;
 ctx.fillRect(mx, my, 30, 30);
@@ -26,21 +26,24 @@ ctx.fillRect(mx + 360, my + 50, 30, 30);
 
 ctx.fillRect(x, y, 30, 30);
 
+var bulletMovement;
+
 var shoot = function() {
-	ctx.fillStyle = "yellow";
 	if (sy >= 0) {
-		setInterval(function() {
-			ctx.clearRect(x, sy, 10, 10)
-			sy -= 7;
-			ctx.fillRect(x, sy, 10, 10);
-			// if (sy >= mx && sy >= my) {
-			// 	ctx.clearRect(mx, my, 30, 30);
-			// }
+		if (bulletMovement) return;
+
+		bulletMovement = setInterval(function() {
+			ctx.clearRect(sx, sy, 10, 10);
+
+			sy -= 10;
+
+			ctx.fillStyle = "yellow";
+			ctx.fillRect(sx, sy, 10, 10);
 		}, 10)
 	} else {
-		ctx.clearRect(x, sy, 10, 10)
+		ctx.clearRect(sx, sy, 10, 10)
 		sx = x + 0;
-		sy = y + -10;
+		sy = y - 10;
 	}
 }
 
@@ -75,12 +78,3 @@ document.onkeydown = function(e) {
 		moveRight();
 	}
 }
-
-// var y = 0
-// setInterval(function() {
-// 	if (y < 50) {
-// 		ctx.clearRect(y, y, 30, 30);
-// 		y += 0.2
-// 		ctx.fillRect(y, y, 30, 30);
-// 	}
-// }, 10);
