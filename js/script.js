@@ -11,7 +11,7 @@ var x = canvas.width/2; //player poition x
 var y = canvas.height - PLAYER_HEIGHT ; //player position y
 
 //Bullet Position
-var sx = x + PLAYER_WIDTH/2; //XPoition of user bullet origin
+var sx = x + 10; //XPoition of user bullet origin
 var sy = y - PLAYER_HEIGHT/2 ;//YPosition of user bullet origin.
 const BULLET_SIZE = 10;
 
