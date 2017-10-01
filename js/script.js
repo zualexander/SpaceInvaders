@@ -11,7 +11,7 @@ var x = canvas.width/2; //player poition x
 var y = canvas.height - PLAYER_HEIGHT ; //player position y
 
 //Bullet Position
-var sx = x   ; //XPoition of user bullet origin
+var sx = x + PLAYER_WIDTH/2; //XPoition of user bullet origin
 var sy = y - PLAYER_HEIGHT/2 ;//YPosition of user bullet origin.
 const BULLET_SIZE = 10;
 
@@ -85,7 +85,7 @@ document.onkeydown = function(e) {
 	var key = e.which || e.keyCode;
 	if (key === 32) { // spacebar
 		shoot();
-	} else if (key === 37) { // lefft arrow
+	} else if (key === 37) { // left arrow
 		moveLeft();
 	} else if (key === 39) { // right arrow
 		moveRight();
