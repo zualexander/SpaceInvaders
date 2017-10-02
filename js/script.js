@@ -38,8 +38,13 @@ ctx.fillRect(x, y, PLAYER_WIDTH, PLAYER_HEIGHT);
 var bulletMovement;
 
 // Shooting function for the player
-var shoot = function() {
+vvar sx, sy;
 
+var shoot = function() {
+	if (!sx || !sy) {
+		sx = x + 10;
+		sy = y - PLAYER_HEIGHT/2;
+	}
 	if (sy >= 0) { // Checks if the bullet is passed the end of the screen.
 		if (bulletMovement) return;
 
